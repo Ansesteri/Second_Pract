@@ -8,4 +8,7 @@ def yesterday(d, m, y):
     Returns:
         str: date of previous day
     """
-    pass
+    if 0 > d > 31:
+        print("Please write the correct number")
+    elif 0 > m > 12:
+        print("Please write the correct number")
