@@ -47,7 +47,7 @@ def empty_places_in_gender_coupe(carriage, gender):
             elif coupe[place] != gender:
                 break
         else:
-            if not len(answer1) < 4:
+            if len(answer1) < 4:
                 answer += answer1
     return answer
 
@@ -61,10 +61,10 @@ print('List of free places')
 print(*empty_place_list(carriage), sep = ", ")
 
 print('List of free lower places')
-print(*empty_lh_place_list(carriage), sep = ", ")
+print(empty_lh_place_list(carriage))
 
 print('List of free upper places')
-print(*empty_lh_place_list(carriage, False), sep = ", ")
+print(empty_lh_place_list(carriage, False))
 
 print('List of free places in coupe with only man company')
 print(empty_places_in_gender_coupe(carriage, 'м'))
