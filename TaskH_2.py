@@ -17,8 +17,8 @@ def tommorow(day, month, year):
     """
     """
     day += 1
-    if day > DAYS_IN_MONTH[month] \
-            + leap_year(year) if month == 2 else 0:
+    if day > (DAYS_IN_MONTH[month] \
+            + leap_year(year) if month == 2 else 0):
         day = 1
         month += 1
     if month == 13:
@@ -44,9 +44,17 @@ def leap_year(year):
     """
     return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
 
+def print_date(day, month, year):
+    """
+    """
+    print(f'{day:0>2}.{month:0>2}.{year}')
+
 day, month, year = map(
     int,
     input('Enter date, example: 15.03.2020 -> ').split('.')
 )
-print(tommorow(day, month, year))
-print(yesterday(day, month, year))
+
+print('Previous date - ', end = '')
+print_date(*yesterday(day, month, year))
+print('Next date - ', end = '')
+print_date(*tommorow(day, month, year))
