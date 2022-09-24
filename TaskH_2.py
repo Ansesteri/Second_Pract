@@ -1,14 +1,25 @@
+DAYS_IN_MONTH = {
+    1: 31,
+    2: 28,
+    3: 31,
+    4: 30,
+    5: 31,
+    6: 30,
+    7: 31,
+    8: 31,
+    9: 30,
+    10: 31,
+    11: 30,
+    12: 31,
+}
+
 def yesterday(d, m, y):
-    """Return date of previous day
+    """Return date of next day
     (day.month.year)
 
     Args:
-        d (only from 1 to 31), m (only from 1 to 12), y (any positive number) (int)
+        d (write day number), m (write month number), y (any positive number) (int)
     
     Returns:
-        str: date of previous day
+        str: date of next day
     """
-    if 0 > d > 31:
-        print("Please write the correct number")
-    elif 0 > m > 12:
-        print("Please write the correct number")
