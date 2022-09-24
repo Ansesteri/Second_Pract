@@ -17,7 +17,8 @@ def tommorow(day, month, year):
     """
     """
     day += 1
-    if day > DAYS_IN_MONTH[month]:
+    if day > DAYS_IN_MONTH[month] \
+            + leap_year(year) if month == 2 else 0:
         day = 1
         month += 1
     if month == 13:
@@ -34,8 +35,14 @@ def yesterday(day, month, year):
         if month == 0:
             month = 12
             year -= 1
-        day = DAYS_IN_MONTH[month]
+        day = DAYS_IN_MONTH[month] \
+            + leap_year(year) if month == 2 else 0
     return day, month, year
+
+def leap_year(year):
+    """
+    """
+    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
 
 day, month, year = map(
     int,
