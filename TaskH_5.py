@@ -1,6 +1,8 @@
 import random
 
 def random_carriage(coupe_amount = 9):
+    """
+    """
     carriage = []
     coupe = {}
     for place in range(1, coupe_amount * 4 + 1):
@@ -11,10 +13,14 @@ def random_carriage(coupe_amount = 9):
     return carriage
 
 def print_carriage(carriage):
+    """
+    """
     for index, coupe in enumerate(carriage):
         print(index + 1, ':', coupe)
 
 def empty_coupe_list(carriage):
+    """
+    """
     answer = {}
     for index, coupe in enumerate(carriage):
         if not any(coupe.values()):
@@ -22,6 +28,8 @@ def empty_coupe_list(carriage):
     return answer
 
 def empty_place_list(carriage):
+    """
+    """
     answer = []
     for coupe in carriage:
         for place in coupe:
@@ -30,6 +38,8 @@ def empty_place_list(carriage):
     return answer
 
 def empty_lh_place_list(carriage, low = True):
+    """
+    """
     answer = []
     for coupe in carriage:
         for place in coupe:
@@ -38,6 +48,8 @@ def empty_lh_place_list(carriage, low = True):
         return answer
 
 def empty_places_in_gender_coupe(carriage, gender):
+    """
+    """
     answer = []
     for coupe in carriage:
         answer1 = []
@@ -53,21 +65,15 @@ def empty_places_in_gender_coupe(carriage, gender):
 
 carriage = random_carriage()
 print_carriage(carriage)
-
 print('List of full free coupe')
 print(empty_coupe_list(carriage))
-
 print('List of free places')
 print(*empty_place_list(carriage), sep = ", ")
-
 print('List of free lower places')
 print(empty_lh_place_list(carriage))
-
 print('List of free upper places')
 print(empty_lh_place_list(carriage, False))
-
 print('List of free places in coupe with only man company')
 print(empty_places_in_gender_coupe(carriage, 'м'))
-
 print('List of free places in coupe with only woman company')
 print(empty_places_in_gender_coupe(carriage, 'ж'))
