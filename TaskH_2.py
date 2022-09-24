@@ -13,13 +13,33 @@ DAYS_IN_MONTH = {
     12: 31,
 }
 
-def yesterday(d, m, y):
-    """Return date of next day
-    (day.month.year)
-
-    Args:
-        d (write day number), m (write month number), y (any positive number) (int)
-    
-    Returns:
-        str: date of next day
+def tommorow(day, month, year):
     """
+    """
+    day += 1
+    if day > DAYS_IN_MONTH[month]:
+        day = 1
+        month += 1
+    if month == 13:
+        month = 1
+        year += 1
+    return day, month, year
+
+def yesterday(day, month, year):
+    """
+    """
+    day -= 1
+    if day == 0:
+        month -= 1
+        if month == 0:
+            month = 12
+            year -= 1
+        day = DAYS_IN_MONTH[month]
+    return day, month, year
+
+day, month, year = map(
+    int,
+    input('Enter date, example: 15.03.2020 -> ').split('.')
+)
+print(tommorow(day, month, year))
+print(yesterday(day, month, year))
