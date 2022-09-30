@@ -1,6 +1,8 @@
 import random
 
 def create_votes(parties, people):
+    """
+    """
     result = []
     for h in range(people):
         vote = random.randint(0, parties)
@@ -8,6 +10,8 @@ def create_votes(parties, people):
     return result
 
 def election_results(parties, votes):
+    """
+    """
     results = {}
     for party in range(1, parties + 1):
         results[party] = votes.count(party)
