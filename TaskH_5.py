@@ -1,7 +1,13 @@
 import random
 
 def random_carriage(coupe_amount = 9):
-    """
+    """Returns list of coupes in carriage
+
+    Args:
+        - coupe (int): for default 9
+    
+    Returns:
+        - (list) all coupes in carriage
     """
     carriage = []
     coupe = {}
@@ -13,13 +19,25 @@ def random_carriage(coupe_amount = 9):
     return carriage
 
 def print_carriage(carriage):
-    """
+    """Prints carriage
+
+    Args:
+        - carriage (str)
+    
+    Returns:
+        - (str) all sits in carriage
     """
     for index, coupe in enumerate(carriage):
         print(index + 1, ':', coupe)
 
 def empty_coupe_list(carriage):
-    """
+    """Returns all numbers of vacant coupes
+
+    Args:
+        - carriage (str)
+    
+    Returns:
+        - (dict) numbers of vacant coupes
     """
     answer = {}
     for index, coupe in enumerate(carriage):
@@ -28,7 +46,13 @@ def empty_coupe_list(carriage):
     return answer
 
 def empty_place_list(carriage):
-    """
+    """Returns all numbers of vacant sits
+
+    Args:
+        - carriage (str)
+    
+    Returns:
+        - (list) numbers of vacant sits
     """
     answer = []
     for coupe in carriage:
@@ -38,7 +62,13 @@ def empty_place_list(carriage):
     return answer
 
 def empty_lh_place_list(carriage, low = True):
-    """
+    """Returns all numbers of vacant low or upper sits
+
+    Args:
+        - carriage (str), low (True/False): True for default
+    
+    Returns:
+        - (list) numbers of vacant low or upper sits
     """
     answer = []
     for coupe in carriage:
@@ -48,7 +78,13 @@ def empty_lh_place_list(carriage, low = True):
         return answer
 
 def empty_places_in_gender_coupe(carriage, gender):
-    """
+    """Returns all numbers of vacant sits for gender
+
+    Args:
+        - carriage (str), gender ("ж" or "м")
+    
+    Returns:
+        - (list) numbers of vacant sits for gender
     """
     answer = []
     for coupe in carriage:
