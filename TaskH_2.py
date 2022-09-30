@@ -13,8 +13,14 @@ DAYS_IN_MONTH = {
     12: 31,
 }
 
-def tommorow(day, month, year):
-    """
+def tomorrow(day, month, year):
+    """Return tomorrow date
+
+    Args:
+        - day, month, year (int): range limits
+    
+    Returns:
+        - (int) tomorrow date
     """
     day += 1
     if day > (DAYS_IN_MONTH[month] \
@@ -27,7 +33,13 @@ def tommorow(day, month, year):
     return day, month, year
 
 def yesterday(day, month, year):
-    """
+    """Return yesterday date
+
+    Args:
+        - day, month, year (int): range limits
+    
+    Returns:
+        - (int) yesterday date
     """
     day -= 1
     if day == 0:
@@ -40,12 +52,24 @@ def yesterday(day, month, year):
     return day, month, year
 
 def leap_year(year):
-    """
+    """checks if year is leap year or not
+
+    Args:
+        - year (int)
+    
+    Returns:
+        - (int) formula of checking leap year
     """
     return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
 
 def print_date(day, month, year):
-    """
+    """prints numbers with '.' between them
+
+    Args:
+        - day, month, year (int)
+    
+    Returns:
+        - numbers with '.' betweem them
     """
     print(f'{day:0>2}.{month:0>2}.{year}')
 
@@ -57,4 +81,4 @@ day, month, year = map(
 print('Previous date - ', end = '')
 print_date(*yesterday(day, month, year))
 print('Next date - ', end = '')
-print_date(*tommorow(day, month, year))
+print_date(*tomorrow(day, month, year))
