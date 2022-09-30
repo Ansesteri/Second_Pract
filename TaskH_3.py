@@ -2,10 +2,10 @@ def symbol_statistics(text):
     """ Returns statistics of symbols in text
 
     Args:
-        text (str): text
+        - text (str): text
     
     Returns:
-        dict: statistics of symbols as dictionary
+        - dict: statistics of symbols as dictionary
     """
     stat = {}
     for letter in text:
